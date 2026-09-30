@@ -1,31 +1,28 @@
-Contact Book Application
-Introduction
+📒 Contact Book Application
 
-The Contact Book Application is a simple Python-based project used to store and manage contact information. It allows the user to add, view, search, modify, and delete contacts.
+A simple command-line contact book built with Python. You can add, view, search, edit and delete contacts, and everything is saved to a text file, so your contacts are still there the next time you open the program.
 
-The application stores the contact's name, phone number, and email address. The contacts are saved in a text file so that the data can be accessed again when the program is run.
+I made this as my Python Essentials project in my first semester. The goal was to put functions, file handling and input validation into something that actually works and is useful.
 
-Objectives
-To create a simple contact management application.
-To store contact names, phone numbers, and email addresses.
-To provide options for searching, modifying, and deleting contacts.
-To use Python functions and file handling in a practical project.
-To provide permanent storage for the saved contacts.
-Features
-Add a new contact
+What it does
+Add a new contact (name, phone number, email)
 View all saved contacts
 Search for a contact by name
-Modify existing contact details
+Modify an existing contact
 Delete a contact
-Check phone number and email input
-Prevent duplicate phone numbers
-Save contacts in a text file
-Load saved contacts when the application starts
-Technologies Used
+Check the phone number and email before saving
+Stop you from saving the same phone number twice
+Save contacts to a text file and load them again when the program starts
+Why I built it
+To make a simple contact management app from scratch
+To practise using Python functions and file handling in a real project
+To add search, edit and delete options, not just "add" and "view"
+To keep data saved permanently instead of losing it when the program closes
+Built with
 Python
 Visual Studio Code
-Text file for data storage
-Project Structure
+A plain text file (contacts.txt) for storage
+Project structure
 Contact_Book/
 │
 ├── main.py
@@ -33,33 +30,23 @@ Contact_Book/
 ├── contact_operations.py
 ├── contacts.txt
 └── README.md
-main.py
-
-This is the main module of the application. It displays the menu and connects the different operations of the Contact Book.
-
-contact.py
-
-This module is used to enter the details of a new contact, including name, phone number, and email address.
-
-contact_operations.py
-
-This module contains the main operations such as adding, viewing, searching, modifying, and deleting contacts. It also contains the functions used for saving and loading contacts.
-
-contacts.txt
-
-This file is used to store the contact information so that contacts are not lost after closing the application.
-
-How to Run
-Install Python on the computer.
+File	What it does
+main.py	The starting point. Shows the menu and connects everything together.
+contact.py	Handles typing in the details of a new contact (name, phone, email).
+contact_operations.py	The main logic: add, view, search, modify and delete contacts, plus saving to and loading from the file.
+contacts.txt	Where the contacts are stored so they don't disappear when you close the program.
+How to run it
+Make sure Python is installed on your computer.
 Open the project folder in Visual Studio Code.
-Make sure all project files are present in the same folder.
+Check that all the project files are in the same folder.
 Open main.py.
-Run the program using the Python Run option or the terminal.
+Run it using the Run button in VS Code, or from the terminal:
+python main.py
 
-The program will display the main menu:
+You'll see this menu:
 
 =========================================
-       CONTACT BOOK APPLICATION
+        CONTACT BOOK APPLICATION
 =========================================
 1. Add Contact
 2. View All Contacts
@@ -69,43 +56,19 @@ The program will display the main menu:
 6. Exit
 =========================================
 
-Enter the number of the required option and follow the instructions shown by the program.
+Type the number of the option you want and follow the instructions on screen.
 
-Contact Information
+How contacts are stored
 
-Each contact contains:
+Each contact has a name, a phone number and an email address.
 
-Name
-Phone Number
-Email Address
-Data Storage
+They are saved in contacts.txt. The file is updated whenever you add, modify or delete a contact, and the saved contacts are loaded automatically when the program starts.
 
-The application uses a text file named contacts.txt for storing contact information.
+Input checks
 
-The data is saved when a contact is added, modified, or deleted. When the program starts, the saved contacts are loaded from the file.
+The program checks what you type before saving it:
 
-Input Validation
-
-The application checks the entered information before saving it.
-
-For example:
-
-Name cannot be empty.
-Phone number must contain 10 digits.
-Email address must contain @ and ..
-
-The application also checks whether a phone number is already present before adding a new contact.
-
-Future Improvements
-
-The project can be improved in the future by adding:
-
-A graphical user interface
-A database for storing contacts
-Contact sorting
-Search by phone number or email
-Contact groups
-A password or login system
-Conclusion
-
-The Contact Book Application provides a simple way to manage contact information using Python. The project demonstrates basic Python programming concepts such as functions, lists, dictionaries, loops, conditional statements, input validation, and file handling.
+The name can't be empty
+The phone number must be exactly 10 digits
+The email must contain @ and .
+A phone number that already exists can't be added again
